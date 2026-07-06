@@ -1,0 +1,33 @@
+.body{
+    background-color: rgb(15, 15, 104);
+}
+
+
+.spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(191, 186, 245, 0.25) 0%,
+    rgba(240, 224, 255, 0.12) 30%,
+    transparent 70%
+  );
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+
+  filter: blur(30px);
+  transition: left 0.08s linear, top 0.08s linear;
+}
